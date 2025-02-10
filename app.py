@@ -27,7 +27,7 @@ def query_rag(user_query, top_k=1, file_names=None):
     results = retrieve_documents_from_weviate(user_query, top_k)
     
     if len(results.objects) == 0:
-        return "No relevant documents found in this set of DHA documents. Please try a different question."
+        return "No relevant documents found in this set of DHA documents. Please try a different question.", None
     
     retrieved_texts = []
     for obj in results.objects:
@@ -42,7 +42,7 @@ def query_rag(user_query, top_k=1, file_names=None):
         
     if not retrieved_texts:
         files_str = ", ".join(file_names) if file_names else "selected files"
-        return f"No relevant documents found in files: {files_str}"
+        return f"No relevant documents found in files: {files_str}", None
     
     context = "\n\n".join(retrieved_texts)
     files_used = "\n".join([f"File: {obj.properties['file']}, Page: {obj.properties['page']}" for obj in results.objects])
