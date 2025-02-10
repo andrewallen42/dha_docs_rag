@@ -1,6 +1,10 @@
 import streamlit as st
 import openai
 import weaviate
+from weaviate.classes.init import Auth
+from weaviate.classes.config import Configure
+import os
+import weaviate.classes as wvc
 
 # API Keys (set these securely in Streamlit secrets)
 OPENAI_API_KEY = st.secrets["OPENAI_API_KEY"]
@@ -11,7 +15,10 @@ WEAVIATE_API_KEY = st.secrets["WEAVIATE_API_KEY"]
 openai_client = openai.OpenAI(api_key=OPENAI_API_KEY)
 
 # Weaviate Connection
-client = weaviate.connect_to_wcs(WEAVIATE_URL, WEAVIATE_API_KEY)
+client = weaviate.connect_to_weaviate_cloud(
+    cluster_url=WEAVIATE_URL,                                    # Replace with your Weaviate Cloud URL
+    auth_credentials=Auth.api_key(WEAVIATE_API_KEY),             # Replace with your Weaviate Cloud key
+)
 collection = client.collections.get("Documents")
 
 # Streamlit UI
