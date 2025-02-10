@@ -115,12 +115,12 @@ selected_files = st.multiselect("Select document(s):", list(all_files)) if selec
 # Submit Button
 if st.button("Get Answer"):
     if user_query.strip():
-        answer = query_rag(user_query, file_names=selected_files)
+        answer, files_used_in_answer = query_rag(user_query, file_names=selected_files)
         st.subheader("Answer:")
         st.write(answer)
         
         # Display the files used
         st.subheader("Files Used:")
-        st.text(files_used if files_used else "")
+        st.text(files_used_in_answer if files_used_in_answer else "")
     else:
         st.warning("Please enter a question.")
