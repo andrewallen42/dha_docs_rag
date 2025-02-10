@@ -1,7 +1,8 @@
 # About This App
 
-This is a simple, proof-of-concept Retrieval-Augmented Generation (RAG) chatbot based on publicly available documents  
-published in the [Defense Health Agency Publications Library](https://www.health.mil/Reference-Center/DHA-Publications).
+[Click here](https://dhadocsrag-jz28xl3k2j9lry3keac6jq.streamlit.app) for a simple, proof-of-concept Retrieval-Augmented Generation (RAG) chatbot based on publicly available documents  
+published in the [Defense Health Agency Publications Library](https://www.health.mil/Reference-Center/DHA-Publications). The app
+is deployed in Streamlit.
 
 ## Get Started
 
