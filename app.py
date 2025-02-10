@@ -30,7 +30,7 @@ user_query = st.text_area("Enter your question:")
 
 # Document Selection
 selection_mode = st.radio("Select documents:", ["All Documents", "Choose Documents"])
-all_files = {obj["file"] for obj in collection.query.fetch_objects(limit=50).objects}
+all_files = {obj.properties["file"] for obj in collection.query.fetch_objects(limit=50).objects}
 selected_files = st.multiselect("Select document(s):", list(all_files)) if selection_mode == "Choose Documents" else None
 
 # Retrieve Documents from Weaviate
