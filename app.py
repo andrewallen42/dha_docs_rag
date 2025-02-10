@@ -119,7 +119,7 @@ You can test the RAG chatbot by:
 3. **Legal Matters:** Which legal matters arising from or relating to the Defense Health Network (DHN) and Military Treatment Facility (MTF) operations should be referred to designated DHA OGC legal personnel, and where can a roster of these legal professionals be found for alignment with DHNs and MTFs?
 4. **Physician Training Programs:** What is the definition of "Complement" in the context of physician training programs according to the DHA-PI 6015.24 document excerpt?
 5. **GME Program Directors:** Retrieve a list of GME program directors responsible for overseeing the development and conduct of GME programs in accordance with ACGME policies and institutional GME policies.
-6. **Abbreviations & Acronyms:** What are the abbreviations and acronyms defined in DHA-AI 6025.12?
+6. **HRPP Policies and Approvals:** Where should changes to HRPP policies and procedures be submitted for approval?
 7. **Waivers:** What is the process for requesting a waiver related to compliance with DHA-IPM 24-004, and who has the authority to grant such waivers within the organization?
 8. **Minor Notification Guidelines:** Retrieve guidelines on when healthcare providers should notify a minor's parent, legal guardian, or surrogate decision maker based on complicating circumstances such as life-threatening conditions or behavior changes affecting healthcare maturity.
 9. **Outpatient Prescription Dispensing:** What are the standardized procedures for outpatient prescription dispensing at MTF pharmacies according to DHA-AI 6025.30?
