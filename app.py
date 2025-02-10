@@ -58,13 +58,13 @@ def query_rag(user_query, top_k=1, file_names=None):
             continue
             
         retrieved_texts.append(f"File: {file_}, Page: {page}, Text: {text}")
-    
+        
     if not retrieved_texts:
         files_str = ", ".join(file_names) if file_names else "selected files"
         return f"No relevant documents found in files: {files_str}"
     
     context = "\n\n".join(retrieved_texts)
-    
+    files_used = "\n".join([f"File: {obj.properties['file']}, Page: {obj.properties['page']}" for obj in results.objects])
     # Construct the LLM prompt
     prompt = f"""You are an AI assistant answering questions based on retrieved documents.
     Use the following information to answer the user's question. If the documents don't have the answer, say so.
@@ -83,7 +83,7 @@ def query_rag(user_query, top_k=1, file_names=None):
             {"role": "user", "content": prompt}
         ]
     )
-    return response.choices[0].message.content
+    return response.choices[0].message.content, files_used
 
 # API Keys (set these securely in Streamlit secrets)
 OPENAI_API_KEY = st.secrets["OPENAI_API_KEY"]
@@ -118,5 +118,9 @@ if st.button("Get Answer"):
         answer = query_rag(user_query, file_names=selected_files)
         st.subheader("Answer:")
         st.write(answer)
+        
+        # Display the files used
+        st.subheader("Files Used:")
+        st.text(files_used if files_used else "")
     else:
         st.warning("Please enter a question.")
