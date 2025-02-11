@@ -29,4 +29,4 @@ You can test the RAG chatbot by:
   Vectors are stored in Weaviate cloud vector storage.
 
 ## Caveats:
-- This proof-of-concept was created quickly. Documents were chunked/vectorized at the page level rather than hierarchically.
+- This document is a proof-of-concept, and does not contain a comprehensive collection of publicly available DHA documents.
